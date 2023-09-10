@@ -1,0 +1,162 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>User Profile</title>-->
+<!--     Add your CSS styles here -->
+<!--    <style>-->
+<!--        /* Add your CSS styles for user profile page */-->
+<!--        /* Example: */-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            background-color: #fafafa;-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--        }-->
+
+<!--        .user-profile {-->
+<!--            max-width: 800px;-->
+<!--            margin: 0 auto;-->
+<!--            background-color: #fff;-->
+<!--            padding: 20px;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+
+<!--        .user-details {-->
+<!--            background-color: #fff;-->
+<!--            padding: 20px;-->
+<!--            border: 1px solid #e1e1e1;-->
+<!--            border-radius: 5px;-->
+<!--            margin-bottom: 20px;-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        .user-avatar {-->
+<!--            width: 150px;-->
+<!--            height: 150px;-->
+<!--            border-radius: 50%;-->
+<!--            overflow: hidden;-->
+<!--            margin: 0 auto 10px;-->
+<!--        }-->
+
+<!--        .user-avatar img {-->
+<!--            width: 100%;-->
+<!--            height: 100%;-->
+<!--            object-fit: cover;-->
+<!--        }-->
+
+<!--        .user-fullname {-->
+<!--            font-size: 24px;-->
+<!--            font-weight: bold;-->
+<!--        }-->
+
+<!--        .user-email {-->
+<!--            color: #666;-->
+<!--        }-->
+
+<!--        .posts {-->
+<!--            background-color: #fff;-->
+<!--            border: 1px solid #e1e1e1;-->
+<!--            border-radius: 5px;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+
+<!--        .post {-->
+<!--            padding: 20px;-->
+<!--            border-bottom: 1px solid #e1e1e1;-->
+<!--        }-->
+
+<!--        .post:last-child {-->
+<!--            border-bottom: none;-->
+<!--        }-->
+
+<!--        .post h3 {-->
+<!--            font-size: 18px;-->
+<!--            margin: 0 0 10px;-->
+<!--        }-->
+
+<!--        .post p {-->
+<!--            font-size: 14px;-->
+<!--            color: #333;-->
+<!--        }-->
+
+<!--        .favorite-authors {-->
+<!--            background-color: #fff;-->
+<!--            border: 1px solid #e1e1e1;-->
+<!--            border-radius: 5px;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+
+<!--        .favorite-authors ul {-->
+<!--            list-style: none;-->
+<!--            padding: 0;-->
+<!--        }-->
+
+<!--        .favorite-authors li {-->
+<!--            padding: 10px 20px;-->
+<!--            border-bottom: 1px solid #e1e1e1;-->
+<!--            font-size: 16px;-->
+<!--            color: #333;-->
+<!--        }-->
+
+<!--        .favorite-posts {-->
+<!--            background-color: #fff;-->
+<!--            border: 1px solid #e1e1e1;-->
+<!--            border-radius: 5px;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+
+<!--        .hidden-posts {-->
+<!--            background-color: #fff;-->
+<!--            border: 1px solid #e1e1e1;-->
+<!--            border-radius: 5px;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="user-profile">-->
+<!--        <div class="user-details">-->
+<!--            <div class="user-fullname">-->
+<!--                 Replace with Thymeleaf variable for user full name -->
+<!--                <span th:text="${user.name}">Md Fawwaz</span>-->
+<!--            </div>-->
+<!--            <div class="user-email">-->
+<!--                 Replace with Thymeleaf variable for user email -->
+<!--                <span>fawwaz@abc.com</span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    
+    <h2>Favorite Authors:</h2>
+    <ul>
+        <!-- Loop through and display favorite authors -->
+        <th:block th:each="author : ${favoriteAuthors}">
+            <li th:text="${author.name}"></li>
+        </th:block>
+    </ul>
+    
+    <h2>Muted Authors:</h2>
+    <ul>
+        <!-- Loop through and display muted authors -->
+        <th:block th:each="author : ${mutedAuthors}">
+            <li th:text="${author.name}"></li>
+        </th:block>
+    </ul>
+    
+    <!-- Other user profile information can be added here -->
+</body>
+</html>
+
